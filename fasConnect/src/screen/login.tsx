@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity, TextInput, BackHandler, Linking, Alert } from 'react-native';
+import { View, Image, Text, TouchableOpacity, TextInput, BackHandler, Linking } from 'react-native';
 import { Button } from 'react-native-elements'
 import styles from './../styles/login-styles'
 import { Roles } from './../core/role.enum'
@@ -16,7 +16,11 @@ interface State {
   loginFail: boolean
 }
 
-export default class Login extends React.Component<{}, State>{
+interface Props {
+  navigation: any
+}
+
+export default class Login extends React.Component<Props, State>{
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +43,10 @@ export default class Login extends React.Component<{}, State>{
 
   actionForButtonBack() {
     const { currentRoles } = this.state
-    currentRoles ? this.changeRole('') : BackHandler.exitApp();
+    currentRoles ? (
+      this.changeRole(''),
+      this.setState({ password: '', tel: '', showPass: true })
+    ) : BackHandler.exitApp();
     return true;
   }
 
@@ -137,9 +144,10 @@ export default class Login extends React.Component<{}, State>{
 
   funcLogin = () => {
     const { tel, password } = this.state
-    tel != '0792204642' && password != '123'
+    tel != '1' && password != 'a'
       ? this.setState({ loginFail: true })
-      : alert('Đăng nhập thành công')
+      // : alert('Đăng nhập thành công')
+      : this.props.navigation.navigate('Drawer')
   }
 
   render() {
