@@ -42,14 +42,6 @@ const loginStyles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: '#fff',
     marginVertical: 37,
-    shadowColor: "rgba(0,0,0,.29)",
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.30,
-    shadowRadius: 4.65,
-    elevation: 16,
   },
   myRow: {
     flexDirection: "row",
@@ -86,17 +78,6 @@ const loginStyles = StyleSheet.create({
   titleButton: {
     fontSize: 20,
     fontWeight: 'bold'
-  },
-  myShadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.32,
-    shadowRadius: 5.46,
-    
-    elevation: 9,
   },
   loginComponent: {
     alignItems: 'center',

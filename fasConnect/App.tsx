@@ -13,6 +13,7 @@ import { createDrawerNavigator, DrawerActions, DrawerItems } from 'react-navigat
 //SCREEN
 import Login from './src/screen/login'
 import Home from './src/screen/home'
+import BottomNavigation from './src/screen/bottom-navigation'
 
 //ICON
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -35,6 +36,15 @@ const RootStack = createStackNavigator(
   }, { initialRouteName: 'Login' }
 );
 
+const BottomNavigationStack = createStackNavigator(
+  {
+    BottomNavigation: {
+      screen: BottomNavigation,
+      navigationOptions: { headerShown: null }
+    }
+  }, { initialRouteName: 'BottomNavigation' }
+)
+
 const HomeStack = createStackNavigator(
   {
     Home: {
@@ -46,26 +56,26 @@ const HomeStack = createStackNavigator(
 
 const DrawerNavigator = createDrawerNavigator({
   Home: {
-    screen: HomeStack,
+    screen: BottomNavigationStack,
     navigationOptions: {
       title: 'Trang chủ',
       drawerIcon: <IconAntDesign name='home' size={23} color='#000' />
     }
   },
-  Home2: {
-    screen: HomeStack,
-    navigationOptions: {
-      title: 'Trang chủ 2 ',
-      drawerIcon: <IconAntDesign name='home' size={23} color='#000' />
-    }
-  },
+  // Home2: {
+  //   screen: HomeStack,
+  //   navigationOptions: {
+  //     title: 'Trang chủ 2 ',
+  //     drawerIcon: <IconAntDesign name='home' size={23} color='#000' />
+  //   }
+  // },
 
 }, { initialRouteName: 'Home' });
 
 const SwitchNavigator = createSwitchNavigator({
   Drawer: DrawerNavigator,
   Login: RootStack,
-  Home: HomeStack
+  BottomNavigation: BottomNavigationStack
 }, {
   initialRouteName: 'Login'
 });

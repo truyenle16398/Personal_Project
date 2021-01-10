@@ -7,6 +7,7 @@ import { Colors } from '../core/color.enum'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IconFeather from 'react-native-vector-icons/Feather'
+import mainStyles from '../core/main-styles';
 
 interface State {
   currentRoles: string,
@@ -58,7 +59,7 @@ export default class Login extends React.Component<Props, State>{
           <TouchableOpacity
             key={item[0]}
             disabled={currentRoles != ''}
-            style={[currentRoles == '' && styles.touchable, { display: currentRoles != item[1] && currentRoles != '' ? 'none' : 'flex' }]}
+            style={[currentRoles == '' && [styles.touchable, mainStyles.myShadow], { display: currentRoles != item[1] && currentRoles != '' ? 'none' : 'flex' }]}
             onPress={() => this.changeRole(item[1])}
           >
             <Image
@@ -119,8 +120,8 @@ export default class Login extends React.Component<Props, State>{
         <Button
           title='Đăng nhập'
           useForeground={true}
-          disabled={tel === '' || password === ''}
-          buttonStyle={[styles.myButton,{ backgroundColor: currentRoles === Roles.PARENTS ? Colors.BLUE : Colors.ORANGE }]}
+          // disabled={tel === '' || password === ''}
+          buttonStyle={[styles.myButton, { backgroundColor: currentRoles === Roles.PARENTS ? Colors.BLUE : Colors.ORANGE }]}
           titleStyle={styles.titleButton}
           onPress={this.funcLogin}
         />
@@ -143,11 +144,11 @@ export default class Login extends React.Component<Props, State>{
   }
 
   funcLogin = () => {
-    const { tel, password } = this.state
-    tel != '1' && password != 'a'
-      ? this.setState({ loginFail: true })
-      // : alert('Đăng nhập thành công')
-      : this.props.navigation.navigate('Drawer')
+    // const { tel, password } = this.state
+    // tel != '1' && password != 'a'
+    //   ? this.setState({ loginFail: true })
+    //   : this.props.navigation.navigate('Drawer')
+    this.props.navigation.navigate('Drawer')
   }
 
   render() {
