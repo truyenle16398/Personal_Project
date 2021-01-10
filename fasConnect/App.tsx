@@ -7,6 +7,7 @@
  */
 
 import * as React from 'react';
+import { SafeAreaView, View, ScrollView, Image, Text } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator, DrawerActions, DrawerItems } from 'react-navigation-drawer';
@@ -17,6 +18,7 @@ import BottomNavigation from './src/screen/bottom-navigation'
 
 //ICON
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import { Colors } from './src/core/color.enum';
 
 
 export default class App extends React.Component<{}> {
@@ -70,7 +72,25 @@ const DrawerNavigator = createDrawerNavigator({
   //   }
   // },
 
-}, { initialRouteName: 'Home' });
+}, {
+  contentComponent: (props) => (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 3, alignItems: 'center', }}>
+        <Image
+          style={{ height: 139, width: 139, marginTop: 34 }}
+          source={require('./assets/parents.png')}
+        />
+        <Text style={{ color: Colors.BLUE, fontSize: 18, fontWeight: '700', marginTop: 5 }}>Ngô Thị Huyền Trâm</Text>
+        <Text style={{ color: Colors.BLUE, fontSize: 18, fontWeight: '400' }}>0898 24 24 61</Text>
+      </View>
+      <View style={{ flex: 7 }}>
+        <ScrollView showsHorizontalScrollIndicator>
+          <DrawerItems iconContainerStyle={{ marginRight: 10 }} {...props} />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
+  ), initialRouteName: 'Home'
+});
 
 const SwitchNavigator = createSwitchNavigator({
   Drawer: DrawerNavigator,
