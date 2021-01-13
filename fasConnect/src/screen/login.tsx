@@ -154,7 +154,7 @@ export default class Login extends React.Component<Props, State>{
   render() {
     const { currentRoles } = this.state
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, mainStyles.container]}>
         {currentRoles ? (
           <Image
             style={styles.imageLogo}

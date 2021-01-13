@@ -68,7 +68,7 @@ export default class Home extends React.Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, mainStyles.container]}>
         <FlatList
           data={optionList}
           style={styles.flatListStyles}

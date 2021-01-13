@@ -5,6 +5,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Home from './home'
 import TempScreen from './temp'
+import NotificationScreen from './notification'
 
 interface Props {
   navigation: any
@@ -33,14 +34,12 @@ export default class BottomNavigation extends React.Component<Props, State> {
 
   renderScene = ({ route }) => {
     switch (route.key) {
-      // case 'openDrawer':
-      //   return <TempScreen />
       case 'contact':
         return <TempScreen />
       case 'home':
         return <Home {...this.props} />
       case 'notifications':
-        return <TempScreen />
+        return <NotificationScreen />
       case 'gallery':
         return <TempScreen />
       default:

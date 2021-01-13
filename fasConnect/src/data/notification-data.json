@@ -1,0 +1,23 @@
+[
+  {
+    "time": "19:16",
+    "title": "Thông báo lịch nghỉ Tết nguyên đán 2021",
+    "shortDescription": "Thông báo cho quý phụ huynh về lịch nghỉ Tết nguyên đán 2021.",
+    "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "isRead": false
+  },
+  {
+    "time": "17:53",
+    "title": "Chỉ thị của Thủ tướng Chính phủ về tăng cường phòng, chống dịch bệnh Covid 19",
+    "shortDescription": "Ngày 5/1, Thủ tướng Chính phủ ban hành Chỉ thị số 01/CT-TTg về việc tăng cường phòng chống dịch bệnh Covid-19.",
+    "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "isRead": false
+  },
+  {
+    "time": "16:53",
+    "title": "Where does it come from?",
+    "shortDescription": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33",
+    "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "isRead": false
+  }
+]
