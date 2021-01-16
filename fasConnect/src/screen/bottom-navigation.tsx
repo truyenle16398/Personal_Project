@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Home from './home'
 import TempScreen from './temp'
 import NotificationScreen from './notification'
+import Gallery from './gallery'
 
 interface Props {
   navigation: any
@@ -41,7 +42,7 @@ export default class BottomNavigation extends React.Component<Props, State> {
       case 'notifications':
         return <NotificationScreen />
       case 'gallery':
-        return <TempScreen />
+        return <Gallery />
       default:
         return null;
     }
