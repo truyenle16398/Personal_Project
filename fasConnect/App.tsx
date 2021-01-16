@@ -15,6 +15,7 @@ import { createDrawerNavigator, DrawerActions, DrawerItems } from 'react-navigat
 import Login from './src/screen/login'
 import Home from './src/screen/home'
 import BottomNavigation from './src/screen/bottom-navigation'
+import Register from './src/screen/register'
 
 //ICON
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -45,6 +46,15 @@ const BottomNavigationStack = createStackNavigator(
       navigationOptions: { headerShown: null }
     }
   }, { initialRouteName: 'BottomNavigation' }
+)
+
+const RegisterStack = createStackNavigator(
+  {
+    Register: {
+      screen: Register,
+      navigationOptions: { headerShown: null }
+    }
+  }, { initialRouteName: 'Register' }
 )
 
 const HomeStack = createStackNavigator(
@@ -95,7 +105,8 @@ const DrawerNavigator = createDrawerNavigator({
 const SwitchNavigator = createSwitchNavigator({
   Drawer: DrawerNavigator,
   Login: RootStack,
-  BottomNavigation: BottomNavigationStack
+  BottomNavigation: BottomNavigationStack,
+  Register: RegisterStack
 }, {
   initialRouteName: 'Login'
 });

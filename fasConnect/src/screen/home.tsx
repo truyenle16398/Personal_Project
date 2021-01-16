@@ -56,7 +56,13 @@ export default class Home extends React.Component<Props> {
       return <View style={styles.transparent} />
     }
     return (
-      <TouchableOpacity activeOpacity={0.5} style={[styles.touchable, mainStyles.myShadow]}>
+      <TouchableOpacity
+        onPress={() => {
+          item.id === 1 && this.props.navigation.navigate('Register')
+        }}
+        activeOpacity={0.5}
+        style={[styles.touchable, mainStyles.myShadow]}
+      >
         <Image
           style={styles.imageTouchable}
           source={item.image}
