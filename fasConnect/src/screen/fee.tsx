@@ -5,7 +5,6 @@ import Header from './../components/header'
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import { Colors } from '../core/color.enum';
 import data from './../data/fee-data.json'
-import { List } from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 
