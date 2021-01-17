@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { Button } from 'react-native-elements'
 import mainStyles from './../core/main-styles'
+import styles from './../styles/register-styles'
 import Header from './../components/header'
 import CalendarPicker from 'react-native-calendar-picker';
 import IconEntypo from 'react-native-vector-icons/Entypo';
@@ -16,8 +17,11 @@ const defaultDayMonth = {
 interface State {
   date: string
 }
+interface Props {
+  navigation: any
+}
 
-export default class Register extends React.Component<{}, State> {
+export default class Register extends React.Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,9 +35,16 @@ export default class Register extends React.Component<{}, State> {
 
   render() {
     const { date } = this.state
+    const { navigation } = this.props
     return (
       <>
-        <Header title='Điểm danh' buttonRight='plus' />
+        <Header
+          title='Điểm danh'
+          buttonRight='plus'
+          onPress={() => navigation.navigate('RegisterDetail')}
+          onBack={() => navigation.navigate('Drawer')}
+          {...this.props}
+        />
         <View style={mainStyles.container}>
           <ScrollView>
             {/* CALENDAR */}
@@ -42,7 +53,7 @@ export default class Register extends React.Component<{}, State> {
               weekdays={defaultDayMonth.day}
               months={defaultDayMonth.month}
               maxDate={new Date()}
-              minDate={new Date('01/01/2020')}
+              minDate={new Date().setMonth(new Date().getMonth() - 6)}
               showDayStragglers={true}
               selectedDayTextColor='#fff'
               selectedDayColor={Colors.BLUE}
@@ -76,88 +87,17 @@ export default class Register extends React.Component<{}, State> {
               </View>
             </View>
           </ScrollView>
-          <View>
+          {/* <View>
             <Button
               title="Đăng ký nghỉ phép"
               useForeground={true}
+              onPress={() => navigation.navigate('RegisterDetail')}
               titleStyle={styles.titleButton}
-              buttonStyle={styles.button}
+              buttonStyle={[styles.button, {backgroundColor: Colors.ORANGE}]}
             />
-          </View>
+          </View> */}
         </View>
       </>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  textStyle: {
-    fontWeight: '700',
-    fontSize: 18,
-    color: 'rgba(0, 0, 0, 0.6)',
-    marginVertical: 12
-  },
-  headerWrapperStyle: {
-    backgroundColor: 'rgba(192, 192, 192, 0.3)',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-    borderRadius: 10,
-    width: Dimensions.get('window').width - 24
-  },
-  customDatesStyles: {
-    fontWeight: '500',
-    fontSize: 16,
-    color: '#000',
-  },
-  customDayHeaderStyles: {
-    color: 'silver'
-  },
-  dayLabelsWrapper: {
-    borderTopColor: '#fff'
-  },
-  myBox: {
-    backgroundColor: 'rgba(3, 155, 229, 0.1)',
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'silver',
-    padding: 12,
-    width: '100%',
-    marginTop: 50,
-    marginBottom: 10
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: '700',
-    textAlign: 'center',
-    marginBottom: 12
-  },
-  splitColumn: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  column: {
-    alignItems: 'flex-start',
-    color: Colors.RED
-  },
-  button: {
-    backgroundColor: Colors.ORANGE,
-    marginTop: 12,
-    marginBottom: 8,
-    borderRadius: 10,
-    height: 59,
-    width: Dimensions.get('window').width - 24,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 2
-  },
-  titleButton: {
-    fontWeight: 'bold',
-    fontSize: 22
-  }
-})

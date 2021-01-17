@@ -14,7 +14,11 @@ const imgData = [
   { image: require('./../../assets/gallery7.jpg') },
 ]
 
-export default class Gallery extends React.Component {
+interface Props {
+  navigation: any
+}
+
+export default class Gallery extends React.Component<Props> {
   constructor(props) {
     super(props)
   }
@@ -33,7 +37,13 @@ export default class Gallery extends React.Component {
   render() {
     return (
       <>
-        <Header title='Album ảnh' buttonRight='plus' />
+        <Header
+          title='Album ảnh'
+          buttonRight='plus'
+          onPress={() => console.log('Album ảnh')}
+          onBack={() => console.log('Album ảnh')}
+          {...this.props}
+        />
         <View style={mainStyles.container}>
           <FlatList
             data={imgData}

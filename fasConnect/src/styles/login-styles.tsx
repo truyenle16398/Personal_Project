@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 const loginStyles = StyleSheet.create({
   container: {
     paddingVertical: 37,
-    paddingHorizontal: 24
+    paddingHorizontal: 24,
+    alignItems: 'center'
   },
   title: {
     color: '#039be5',

@@ -5,8 +5,11 @@ import styles from './../styles/notification-styles';
 import Header from './../components/header'
 import dataNotification from './../data/notification-data.json'
 
+interface Props {
+  navigation: any
+}
 
-export default class NotificationScreen extends React.Component {
+export default class NotificationScreen extends React.Component<Props> {
   constructor(props) {
     super(props);
   }
@@ -24,7 +27,13 @@ export default class NotificationScreen extends React.Component {
   render() {
     return (
       <>
-        <Header title='Thông báo' buttonRight='search' {...this.props} />
+        <Header
+          title='Thông báo'
+          buttonRight='search'
+          onPress={() => console.log('Thông báo')}
+          onBack={() => console.log('Thông báo')}
+          {...this.props}
+        />
         <View style={mainStyles.container}>
           <FlatList
             data={dataNotification}

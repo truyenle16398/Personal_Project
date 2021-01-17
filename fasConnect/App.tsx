@@ -16,6 +16,7 @@ import Login from './src/screen/login'
 import Home from './src/screen/home'
 import BottomNavigation from './src/screen/bottom-navigation'
 import Register from './src/screen/register'
+import RegisterDetail from './src/screen/register-detail'
 
 //ICON
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -52,6 +53,10 @@ const RegisterStack = createStackNavigator(
   {
     Register: {
       screen: Register,
+      navigationOptions: { headerShown: null }
+    },
+    RegisterDetail: {
+      screen: RegisterDetail,
       navigationOptions: { headerShown: null }
     }
   }, { initialRouteName: 'Register' }

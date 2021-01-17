@@ -5,8 +5,7 @@ const mainStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 12,
-    alignItems: 'center'
+    padding: 12
   },
   myShadow: {
     shadowColor: "rgba(0,0,0,.29)",
