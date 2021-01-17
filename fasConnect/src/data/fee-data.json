@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Học phí",
+    "value": "1,550,000₫",
+    "data": [
+      {
+        "name": "Số ngày nghỉ",
+        "val": 2
+      },
+      {
+        "name": "Tiền thừa nghỉ học",
+        "val": "-142,000₫"
+      },
+      {
+        "name": "Số ngày ₫i học",
+        "val": 27
+      }
+    ]
+  },
+  {
+    "title": "Ăn chính và xế",
+    "value": "1,134,000₫"
+  },
+  {
+    "title": "Ăn sáng",
+    "value": "378,000₫",
+    "data": [
+      {
+        "name": "Tiền ăn sáng",
+        "val": "313,000₫"
+      },
+      {
+        "name": "Công cô cho cháu ăn sáng",
+        "val": "65,000₫"
+      }
+    ]
+  },
+  {
+    "title": "Ăn tối",
+    "value": "483,000₫",
+    "data": [
+      {
+        "name": "Tiền ăn tối",
+        "val": "405,000₫"
+      },
+      {
+        "name": "Công cô cho cháu ăn tối",
+        "val": "78,000₫"
+      }
+    ]
+  },
+  {
+    "title": "Nợ tháng trước",
+    "value": "0₫"
+  },
+  {
+    "title": "Các khoản khác",
+    "value": "50,000₫",
+    "data": [
+      {
+        "name": "Aerobic",
+        "val": "50,000₫"
+      }
+    ]
+  },
+  {
+    "title": "Miễn giảm",
+    "value": "-500,000₫"
+  }
+]

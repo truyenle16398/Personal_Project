@@ -17,6 +17,7 @@ import Home from './src/screen/home'
 import BottomNavigation from './src/screen/bottom-navigation'
 import Register from './src/screen/register'
 import RegisterDetail from './src/screen/register-detail'
+import Fee from './src/screen/fee'
 
 //ICON
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -71,6 +72,15 @@ const HomeStack = createStackNavigator(
   }, { initialRouteName: 'Home' }
 )
 
+const FeeStack = createStackNavigator(
+  {
+    Fee: {
+      screen: Fee,
+      navigationOptions: { headerShown: null }
+    }
+  }, { initialRouteName: 'Fee' }
+)
+
 const DrawerNavigator = createDrawerNavigator({
   Home: {
     screen: BottomNavigationStack,
@@ -111,7 +121,8 @@ const SwitchNavigator = createSwitchNavigator({
   Drawer: DrawerNavigator,
   Login: RootStack,
   BottomNavigation: BottomNavigationStack,
-  Register: RegisterStack
+  Register: RegisterStack,
+  Fee: FeeStack
 }, {
   initialRouteName: 'Login'
 });

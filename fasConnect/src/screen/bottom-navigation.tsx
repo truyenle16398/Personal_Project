@@ -40,9 +40,9 @@ export default class BottomNavigation extends React.Component<Props, State> {
       case 'home':
         return <Home {...this.props} />
       case 'notifications':
-        return <NotificationScreen />
+        return <NotificationScreen {...this.props}/>
       case 'gallery':
-        return <Gallery />
+        return <Gallery {...this.props}/>
       default:
         return null;
     }

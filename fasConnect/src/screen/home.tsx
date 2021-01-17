@@ -12,37 +12,43 @@ const optionList = [
     id: 1,
     name: 'Xin phép',
     image: require('./../../assets/register.png'),
-    color: '#039be5'
+    color: '#039be5',
+    route: 'Register'
   },
   {
     id: 2,
     name: 'Học phí',
     image: require('./../../assets/fee.png'),
-    color: '#FF8F0C'
+    color: '#FF8F0C',
+    route: 'Fee'
   },
   {
     id: 3,
     name: 'Thực đơn',
     image: require('./../../assets/nutrition.png'),
-    color: '#FF8F0C'
+    color: '#FF8F0C',
+    route: ''
   },
   {
     id: 4,
     name: 'Kế hoạch học tập',
     image: require('./../../assets/plan.png'),
-    color: '#039be5'
+    color: '#039be5',
+    route: ''
   },
   {
     id: 5,
     name: 'Dặn thuốc',
     image: require('./../../assets/medicine.png'),
-    color: '#039be5'
+    color: '#039be5',
+    route: ''
   },
   {
     id: 6,
     name: '',
     image: '',
-    color: '#FF8F0C'
+    color: '#FF8F0C',
+    route: ''
   }
 ]
 
@@ -52,14 +58,13 @@ export default class Home extends React.Component<Props> {
   }
 
   _renderItem = ({ item, index }) => {
+    const { navigation } = this.props
     if (item.name == '') {
       return <View style={styles.transparent} />
     }
     return (
       <TouchableOpacity
-        onPress={() => {
-          item.id === 1 && this.props.navigation.navigate('Register')
-        }}
+        onPress={() => navigation.navigate(item.route)}
         activeOpacity={0.5}
         style={[styles.touchable, mainStyles.myShadow]}
       >
